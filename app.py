@@ -2,7 +2,6 @@ import streamlit as st
 import time
 import google.generativeai as genai
 
-
 api = st.secrets['secrets']['API_KEY']
 genai.configure(api_key=api)
 model = genai.GenerativeModel(model_name='gemini-2.0-flash-lite')
@@ -16,7 +15,7 @@ def render()->st:
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 def gemini(word):
-  response = chat.send_message('"{}"を中二病っぽくしてそれと読み方だけ出力して'.format(word))
+  response = chat.send_message('"{}"を中二病っぽくしてそれと読み方だけ出力して。フォーマットとしては「○○○」という変換後の言葉の後に、改行して「×××」という読み方を入れる感じ。'.format(word))
   return response.text
 
 render()
