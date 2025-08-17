@@ -15,13 +15,13 @@ def render()->st:
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 def gemini(word):
-  response = chat.send_message('"{}"を中二病っぽくしてそれと読み方だけ出力して。フォーマットとしては「○○○」という変換後の言葉の後に、改行して「×××」という読み方を入れる感じ。'.format(word))
+  response = chat.send_message('"{}"を中二病っぽくしてそれと読み方だけ出力して。フォーマットとしては「○○○」という変換後の言葉の後に、改行して「×××」という○○○読み方を入れる感じ。'.format(word))
   return response.text
 
 render()
 genai.configure(api_key=api)
 
-text_input = st.text_input('文の入力', '変換前の文の入力をしてください')
+text_input = st.text_input('文の入力', placeholder="例：このラーメンは実は食品サンプルです")
 
 if st.button('start'):
     with st.spinner('processiong...'):
