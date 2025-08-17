@@ -21,12 +21,14 @@ def gemini(word):
 render()
 genai.configure(api_key=api)
 
+st.write("1.入力欄に変換したい分を入力\n2.変換ボタンをクリック\n3.中二病チックな文が生成されます")
+
 text_input = st.text_input('文の入力', placeholder="例：このラーメンは実は食品サンプルです")
 
 if text_input=="":
   text_input="例：このラーメンは実は食品サンプルです"
 
-if st.button('start'):
+if st.button('変換'):
     with st.spinner('processiong...'):
         time.sleep(3)
         result = gemini(text_input)
