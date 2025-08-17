@@ -21,7 +21,10 @@ def gemini(word):
 render()
 genai.configure(api_key=api)
 
-st.write("1.入力欄に変換したい分を入力\n2.変換ボタンをクリック\n3.中二病チックな文が生成されます")
+st.write("1.入力欄に変換したい分を入力")
+st.write("2.変換ボタンをクリック")
+st.write("3.中二病チックな文が生成されます")
+
 
 text_input = st.text_input('文の入力', placeholder="例：このラーメンは実は食品サンプルです")
 
