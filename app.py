@@ -23,6 +23,9 @@ genai.configure(api_key=api)
 
 text_input = st.text_input('文の入力', placeholder="例：このラーメンは実は食品サンプルです")
 
+if text_input=="":
+  text_input="例：このラーメンは実は食品サンプルです"
+
 if st.button('start'):
     with st.spinner('processiong...'):
         time.sleep(3)
