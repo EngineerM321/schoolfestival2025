@@ -1,7 +1,6 @@
 import streamlit as st
 import time
 import google.generativeai as genai
-from google.colab import userdata
 
 
 api = st.secrets['secrets']['API_KEY']
