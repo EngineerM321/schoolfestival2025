@@ -8,10 +8,11 @@ model = genai.GenerativeModel(model_name='gemini-2.0-flash-lite')
 chat = model.start_chat()
 
 back = st.secrets['secrets']['Background_Image']
+
 st.title('中二病ジェネレーター')
 
 def render()->st:
-    bg_img = '<style>.stApp {background-image: url(' +back+ ');object-fit: cover;background-repeat: no-repeat;}</style>'
+    bg_img = '<style>.stApp {background-color:#ffffff;background-image: url(' +back+ ');object-fit: cover;background-repeat: no-repeat;}</style>'
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 def gemini(word):
@@ -21,7 +22,7 @@ def gemini(word):
 render()
 genai.configure(api_key=api)
 
-st.write("1.入力欄に変換したい分を入力")
+st.write("1.入力欄に変換したい文を入力")
 st.write("2.変換ボタンをクリック")
 st.write("3.中二病チックな文が生成されます")
 
@@ -32,7 +33,7 @@ if text_input=="":
   text_input="例：このラーメンは実は食品サンプルです"
 
 if st.button('変換'):
-    with st.spinner('processiong...'):
+    with st.spinner('変換中...'):
         time.sleep(3)
         result = gemini(text_input)
         st.write(result)
