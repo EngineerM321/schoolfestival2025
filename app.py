@@ -12,7 +12,7 @@ back = st.secrets['secrets']['Background_Image']
 st.title('中二病ジェネレーター')
 
 def render()->st:
-    bg_img = '<style>.stApp {background-color:#ffffff;background-image: url(' +back+ ');object-fit: cover;background-repeat: no-repeat;}</style>'
+    bg_img = '<style>.stApp {background-image: url(' +back+ ');object-fit: cover;background-repeat: no-repeat;}</style>'
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 def gemini(word):
@@ -22,9 +22,9 @@ def gemini(word):
 #render()
 genai.configure(api_key=api)
 
-st.write(":black[1.入力欄に変換したい文を入力]")
-st.write(":black[2.変換ボタンをクリック]")
-st.write(":black[3.中二病チックな文が生成されます]")
+st.write("1.入力欄に変換したい文を入力")
+st.write("2.変換ボタンをクリック")
+st.write("3.中二病チックな文が生成されます")
 
 
 text_input = st.text_input('文の入力', placeholder="例：このラーメンは実は食品サンプルです")
