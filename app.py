@@ -19,7 +19,7 @@ def gemini(word):
   response = chat.send_message('"{}"を中二病っぽくしてそれと読み方だけ出力して。フォーマットとしては「○○○」という変換後の言葉の後に、改行して「×××」という○○○の読み方を入れる感じ。'.format(word))
   return response.text
 
-#render()
+render()
 genai.configure(api_key=api)
 
 st.write("1.入力欄に変換したい文を入力")
