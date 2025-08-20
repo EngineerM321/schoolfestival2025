@@ -8,7 +8,7 @@ model = genai.GenerativeModel(model_name='gemini-2.0-flash-lite')
 chat = model.start_chat()
 
 #back = st.secrets['secrets']['Background_Image']
-back='https://drive.usercontent.google.com/download?id=18jokNW8ktwfdnb5-3-n7XA7KwtftbVIr'
+back='https://drive.google.com/uc?export=view&id=18jokNW8ktwfdnb5-3-n7XA7KwtftbVIr'
 st.title('中二病ジェネレーター')
 
 def render()->st:
