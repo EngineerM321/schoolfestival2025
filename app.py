@@ -12,7 +12,7 @@ back='https://drive.google.com/uc?export=view&id=18jokNW8ktwfdnb5-3-n7XA7KwtftbV
 st.title('中二病ジェネレーター')
 
 def render()->st:
-    bg_img = '<style>.stApp {background-image: url({back});object-fit: cover;background-repeat: no-repeat;}</style>'
+    bg_img = '<style>.stApp {background-image: url(' + back +');object-fit: cover;background-repeat: no-repeat;}</style>'
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 def gemini(word):
