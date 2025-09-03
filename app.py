@@ -13,7 +13,7 @@ st.title('中二病ジェネレーター')
 
 def render()->st:
     bg_img = '''<style>.stApp {
-    background-potion: bottom;
+    //background-position: bottom;
     background-image: url(' + back +');
     object-fit: cover;
     background-repeat: no-repeat;
