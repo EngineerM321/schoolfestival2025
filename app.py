@@ -12,7 +12,7 @@ back = st.secrets['secrets']['Background_Image']
 st.title('中二病ジェネレーター')
 
 def render()->st:
-    bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;margin-left: 600px;}</style>'
+    bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;}</style>'
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 def gemini(word):
