@@ -29,7 +29,7 @@ st.write("###### 1.入力欄に変換したい文を入力  \n###### 2.変換ボ
 text_input = st.text_input('###### 文の入力', placeholder="例：このラーメンは実は食品サンプルです")
 
 if text_input=="":
-  text_input="例：このラーメンは実は食品サンプルです"
+  text_input="このラーメンは実は食品サンプルです"
 
 if st.button('変換'):
     with st.spinner('変換中...'):
