@@ -1,2 +1,2 @@
 Made by M
-Website url is https://chunibyogen.streamlit.app/
+Website url is https://chunibyogenerator.streamlit.app/
