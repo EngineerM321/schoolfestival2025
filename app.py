@@ -35,4 +35,4 @@ if st.button('変換'):
     with st.spinner('変換中...'):
         time.sleep(3)
         result = gemini(text_input)
-        st.write("アポー")
+        st.write(result)
