@@ -16,7 +16,7 @@ def render()->st:
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 def gemini(word):
-  response = chat.send_message('"{}"を中二病っぽくして言葉だけを出力して。'.format(word))
+  response = chat.send_message('"{}"を中二病っぽくして言葉だけを一つ出力して。'.format(word))
   return response.text
 
 render()
