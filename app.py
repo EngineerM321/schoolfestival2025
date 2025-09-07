@@ -35,7 +35,7 @@ def gemini(word):
   return response.text
 
 # 背景をレンダリング
-font()
+#font()
 render()
 
 # アプリの使い方を表示
