@@ -14,21 +14,12 @@ back = st.secrets['secrets']['Background_Image']
 st.title('中二病ジェネレーター')
 
 def render():
-    bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;}</style>'
+    bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat; background-size: cover;}</style>'
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 def gemini(word):
   response = chat.send_message('"{}"を中二病っぽくして言葉だけを１つ出力して'.format(word))
   return response.text
-
-def read_text(text):
-    engine = pyttsx3.init()
-    engine.setProperty('rate', 150)
-    engine.setProperty('volume', 1)
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[0].id)
-    engine.runAndWait()
-
 
 render()
 
