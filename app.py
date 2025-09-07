@@ -27,14 +27,14 @@ def render():
 
 #フォントを指定する関数
 def font():
-    st.markdown("""
+    st.markdown('''
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <style>
     html, body, [class*="css"]  {
         font-family: 'Noto Sans JP', sans-serif;
     }
     </style>
-""", unsafe_allow_html=True)
+''', unsafe_allow_html=True)
 
 # 入力された文を中二病風の単語に変換する関数
 def gemini(word):
@@ -42,8 +42,8 @@ def gemini(word):
   return response.text
 
 # 背景をレンダリング
-render()
 font()
+render()
 
 # アプリの使い方を表示
 st.write("###### 1.入力欄に変換したい文を入力(20文字以内)  \n###### 2.変換ボタンをクリック  \n###### 3.中二病チックな文が生成されます")
