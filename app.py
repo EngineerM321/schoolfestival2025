@@ -27,7 +27,15 @@ def render():
 
 #フォントを指定する関数
 def font():
-    st.markdown("<style>@import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap');html, body, [class*="css"]  {font-family: 'WDXL Lubrifont JP N', sans-serif}</style>""", unsafe_allow_html=True)
+    st.markdown('''
+    <style>
+    @import url("https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap");
+
+    html, body, [class*="css"]  {
+        font-family: "WDXL Lubrifont JP N", sans-serif;;
+    }
+    </style>
+''', unsafe_allow_html=True)
 
 # 入力された文を中二病風の単語に変換する関数
 def gemini(word):
