@@ -25,6 +25,10 @@ def render():
     bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;}</style>'
     return st.markdown(bg_img, unsafe_allow_html=True)
 
+#フォントを指定する関数
+def font():
+    st.markdown("<style>@import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap');html, body, [class*="css"]  {font-family: 'WDXL Lubrifont JP N', sans-serif}</style>""", unsafe_allow_html=True)
+
 # 入力された文を中二病風の単語に変換する関数
 def gemini(word):
   response = chat.send_message('"{}"を中二病っぽくして言葉だけを１つ出力して'.format(word))
@@ -32,6 +36,7 @@ def gemini(word):
 
 # 背景をレンダリング
 render()
+font()
 
 # アプリの使い方を表示
 st.write("###### 1.入力欄に変換したい文を入力(20文字以内)  \n###### 2.変換ボタンをクリック  \n###### 3.中二病チックな文が生成されます")
