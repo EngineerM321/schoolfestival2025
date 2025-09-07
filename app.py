@@ -41,7 +41,7 @@ text_input = st.text_input('###### 文の入力', placeholder="例：このラ�
 
 if st.button('変換'):
     if len(text_input) > maxword:
-        overword = len(text_input) - maxwword
+        overword = len(text_input) - maxword
         st.warning(str(overword) + "文字オーバーしています")
     else:
         with st.spinner('変換中...'):
