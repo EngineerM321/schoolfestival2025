@@ -26,9 +26,8 @@ def render():
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 #フォントを指定する関数
-def font():
-    with open('styles.css') as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+with open('styles.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # 入力された文を中二病風の単語に変換する関数
 def gemini(word):
