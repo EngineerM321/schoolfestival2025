@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 import google.generativeai as genai
+import pyttsx3
 
 api = st.secrets['secrets']['API_KEY']
 genai.configure(api_key=api)
@@ -19,6 +20,15 @@ def gemini(word):
   response = chat.send_message('"{}"を中二病っぽくして言葉だけを１つ出力して'.format(word))
   return response.text
 
+def read_text(text):
+    engine = pyttsx3.init()
+    engine.setProperty('rate', 150)
+    engine.setProperty('volume', 1)
+    voices = engine.getProperty('voices')
+    engine.setProperty('voice', voices[0].id)
+    engine.runAndWait()
+
+
 render()
 genai.configure(api_key=api)
 
@@ -36,3 +46,4 @@ if st.button('変換'):
         time.sleep(3)
         result = gemini(text_input)
         st.write(result)
+        read_text(result)
