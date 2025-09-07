@@ -38,6 +38,5 @@ if st.button('変換'):
         with st.spinner('変換中...'):
             time.sleep(3)
             result = gemini(text_input)
-            st.success("生成された中二病ワード:")
-            st.write(result)
+            st.success("生成された中二病ワード:" + result)
 
