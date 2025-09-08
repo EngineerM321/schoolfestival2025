@@ -7,7 +7,7 @@ import google.generativeai as genai
 maxword = 20
 
 # StreamlitのsecretsからAPIキーを取得
-api = st.secrets['secrets']['API_KEY']
+api = st.secrets['API_KEY']
 
 # Gemini APIの初期化
 genai.configure(api_key=api)
@@ -15,7 +15,7 @@ model = genai.GenerativeModel(model_name='gemini-2.0-flash-lite')
 chat = model.start_chat()
 
 # 背景画像のURLをsecretsから取得
-back = st.secrets['secrets']['Background_Image']
+back = st.secrets['Background_Image']
 
 # アプリのタイトルを表示
 st.title('中二病ジェネレーター')
