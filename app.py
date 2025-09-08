@@ -39,7 +39,7 @@ def font():
         font-style: normal;
     }
     body, .css-1v3fvcr {
-        font-family: 'WDXL Lubrifont JP N", sans-serif';
+        font-family: 'WDXL Lubrifont JP N', sans-serif;
     }
     """
     
