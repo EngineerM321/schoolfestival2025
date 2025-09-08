@@ -28,11 +28,11 @@ def render():
 #フォントを指定する関数
 def font():
     return st.markdown('<link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">'
-    '<style>'
+    '<style>.stApp{'
     'html, body, [class*="css"] {'
     "font-family: 'Noto Sans JP', sans-serif;"
     '}'
-    '</style>', unsafe_allow_html=True)
+    '}</style>', unsafe_allow_html=True)
 
 # 入力された文を中二病風の単語に変換する関数
 def gemini(word):
