@@ -30,7 +30,7 @@ def font():
     return st.markdown('<link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">'
     '<style>.stApp{'
     'html, body, [class*="css"] {'
-    "font-family: 'Noto Sans JP', sans-serif;"
+    font-family: "WDXL Lubrifont JP N", sans-serif;
     '}'
     '}</style>', unsafe_allow_html=True)
 
@@ -42,15 +42,7 @@ def gemini(word):
 # 背景をレンダリング
 
 render()
-st.markdown("""
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-    <style>
-        html, body, [class*="css"]  {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
+font()
 # アプリの使い方を表示
 st.write("###### 1.入力欄に変換したい文を入力(20文字以内)  \n###### 2.変換ボタンをクリック  \n###### 3.中二病チックな文が生成されます")
 
