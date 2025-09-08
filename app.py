@@ -23,33 +23,23 @@ st.title('中二病ジェネレーター')
 
 # 背景画像を適用する関数
 def render():
-    bg_img = """
-    <style>.stApp {
-    background-image: url(""" + back + """);
-    background-repeat: no-repeat;</style>
-    """
+    bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;}</style>'
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 #フォントを指定する関数
 def font():
-    font_path = "./static/fonts/WDXLLubrifontJPN-Regular.woff2"
-    with open(font_path, "rb") as f:
-        font_data = f.read()
-        encoded = base64.b64encode(font_data).decode()
-
-    # CSSでフォントを読み込む
-    return st.markdown(f"""
-        <style>
-        @font-face {{
-            font-family: 'WDXL Lubrifont JP N', sans-serif;;
-            src: url(data:font/ttf;base64,{encoded}) format('truetype');
-        }}
+    font_css = """@font-face {
+        font-family: 'WDXL Lubrifont JP N", sans-serif';
+        src: url('static/fonts/WDXLLubrifontJPN-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body, .css-1v3fvcr {
+        font-family: 'WDXL Lubrifont JP N", sans-serif';
+    }
+    """
     
-        html, body, [class*="css"]  {{
-            font-family: 'WDXL Lubrifont JP N', sans-serif;
-        }}
-        </style>
-    """, unsafe_allow_html=True)
+    return st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
 
 
 # 入力された文を中二病風の単語に変換する関数
