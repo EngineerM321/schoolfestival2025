@@ -27,7 +27,7 @@ def render():
 
 #フォントを指定する関数
 def font():
-    return st.markdown('''<link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">'
+    return st.markdown('''<link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">
     <style>.stApp{
     html, body, [class*="css"] {
     font-family: "WDXL Lubrifont JP N", sans-serif;
