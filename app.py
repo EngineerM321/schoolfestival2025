@@ -22,7 +22,11 @@ st.title('中二病ジェネレーター')
 
 # 背景画像を適用する関数
 def render():
-    bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;}</style>'
+    bg_img = '''
+    <style>.stApp {
+    background-image: url(' + back +');
+    background-repeat: no-repeat;
+    }</style>'''
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 #フォントを指定する関数
