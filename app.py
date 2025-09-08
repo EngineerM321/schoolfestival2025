@@ -27,7 +27,7 @@ def render():
 
 #フォントを指定する関数
 def font():
-    st.markdown('<link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">'
+    return st.markdown('<link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">'
     '<style>'
     'html, body, [class*="css"] {'
     "font-family: 'Noto Sans JP', sans-serif;"
