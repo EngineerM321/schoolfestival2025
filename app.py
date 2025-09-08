@@ -23,7 +23,7 @@ st.title('中二病ジェネレーター')
 # 背景画像を適用する関数
 def render():
     bg_img = """
-    <style>.stApp {
+    <head><style>.stApp {
     background-image: url(""" + back + """);
     background-repeat: no-repeat;
     @font-face {
@@ -32,10 +32,10 @@ def render():
         font-weight: normal;
         font-style: normal;
     }
-    style, .css-1v3fvcr {
+    body, .css-1v3fvcr {
         font-family: 'WDXL Lubrifont JP N", sans-serif';
     }
-    }</style>"""
+    }</style></head>"""
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 #フォントを指定する関数
