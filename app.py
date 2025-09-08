@@ -2,6 +2,7 @@
 import streamlit as st
 import time
 import google.generativeai as genai
+import base64
 
 # 入力文字数の最大値を設定
 maxword = 20
@@ -31,19 +32,24 @@ def render():
 
 #フォントを指定する関数
 def font():
-    font_css = """
-    @font-face {
-        font-family: 'WDXL Lubrifont JP N', sans-serif;
-        src: url('static/fonts/WDXLLubrifontJPN-Regular.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
-    .css-1v3fvcr {
-        font-family: 'WDXL Lubrifont JP N', sans-serif;
-    }
-    """
+    font_path = "./static/fonts/WDXLLubrifontJPN-Regular.woff2"
+    with open(font_path, "rb") as f:
+        font_data = f.read()
+        encoded = base64.b64encode(font_data).decode()
+
+    # CSSでフォントを読み込む
+    return st.markdown(f"""
+        <style>
+        @font-face {{
+            font-family: 'WDXL Lubrifont JP N', sans-serif;;
+            src: url(data:font/ttf;base64,{encoded}) format('truetype');
+        }}
     
-    return st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
+        html, body, [class*="css"]  {{
+            font-family: 'WDXL Lubrifont JP N', sans-serif;
+        }}
+        </style>
+    """, unsafe_allow_html=True)
 
 
 # 入力された文を中二病風の単語に変換する関数
