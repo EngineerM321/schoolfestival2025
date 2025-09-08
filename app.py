@@ -25,7 +25,7 @@ def render():
     bg_img = """
     <style>.stApp {
     background-image: url(""" + back + """);
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;</style>
     """
     return st.markdown(bg_img, unsafe_allow_html=True)
 
