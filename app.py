@@ -38,12 +38,12 @@ def font():
         font-weight: normal;
         font-style: normal;
     }
-    body, .css-1v3fvcr {
+    .css-1v3fvcr {
         font-family: 'WDXL Lubrifont JP N', sans-serif;
     }
     """
     
-    return st.markdown(f'<body><style>{font_css}</style></body>', unsafe_allow_html=True)
+    return st.markdown(f><style>{font_css}</style>', unsafe_allow_html=True)
 
 
 # 入力された文を中二病風の単語に変換する関数
