@@ -26,6 +26,15 @@ def render():
     <style>.stApp {
     background-image: url(""" + back + """);
     background-repeat: no-repeat;
+    @font-face {
+        font-family: 'WDXL Lubrifont JP N", sans-serif';
+        src: url('static/fonts/WDXLLubrifontJPN-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body, .css-1v3fvcr {
+        font-family: 'WDXL Lubrifont JP N", sans-serif';
+    }
     }</style>"""
     return st.markdown(bg_img, unsafe_allow_html=True)
 
@@ -54,7 +63,7 @@ def gemini(word):
 # 背景をレンダリング
 
 render()
-font()
+
 # アプリの使い方を表示
 st.write("###### 1.入力欄に変換したい文を入力(20文字以内)  \n###### 2.変換ボタンをクリック  \n###### 3.中二病チックな文が生成されます")
 
