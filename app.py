@@ -32,7 +32,7 @@ def render():
         font-weight: normal;
         font-style: normal;
     }
-    body, .css-1v3fvcr {
+    style, .css-1v3fvcr {
         font-family: 'WDXL Lubrifont JP N", sans-serif';
     }
     }</style>"""
