@@ -28,9 +28,10 @@ def render():
 
 #フォントを指定する関数
 def font():
-    font_css = """@font-face {
-        font-family: 'WDXL Lubrifont JP N', sans-serif;
-        src: url('static/fonts/WDXLLubrifontJPN-Regular.woff2') format('woff2');
+    font_css = """
+    @font-face {
+        font-family: 'WDXL Lubrifont JP N';
+        src: url('./static/fonts/WDXLLubrifontJPN-Regular.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
