@@ -43,7 +43,7 @@ def font():
     }
     """
     
-    return st.markdown(f><style>{font_css}</style>', unsafe_allow_html=True)
+    return st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
 
 
 # 入力された文を中二病風の単語に変換する関数
