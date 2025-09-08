@@ -26,16 +26,7 @@ def render():
     <head><style>.stApp {
     background-image: url(""" + back + """);
     background-repeat: no-repeat;
-    @font-face {
-        font-family: 'WDXL Lubrifont JP N", sans-serif';
-        src: url('static/fonts/WDXLLubrifontJPN-Regular.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
-    body, .css-1v3fvcr {
-        font-family: 'WDXL Lubrifont JP N", sans-serif';
-    }
-    }</style></head>"""
+    """
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 #フォントを指定する関数
