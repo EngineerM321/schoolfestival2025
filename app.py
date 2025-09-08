@@ -27,19 +27,19 @@ def render():
 
 #フォントを指定する関数
 def font():
-    return font_css = """
+    font_css = """
 @font-face {
-    font-family: 'CustomFont';
-    src: url('./static/fonts/customfont.woff2') format('woff2');
+    font-family: 'WDXL Lubrifont JP N', sans-serif;
+    src: url('./static/fonts/WDXLLubrifontJPN-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 body, .css-1v3fvcr {
-    font-family: 'CustomFont', sans-serif;
+    font-family: 'WDXL Lubrifont JP N', sans-serif;
 }
 """
 
-st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
+return st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
 
 # 入力された文を中二病風の単語に変換する関数
 def gemini(word):
