@@ -30,7 +30,7 @@ def font():
     st.markdown('<link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">'
     '<style>'
     'html, body, [class*="css"] {'
-    'font-family: 'Noto Sans JP', sans-serif;'
+    "font-family: 'Noto Sans JP', sans-serif;"
     '}'
     '</style>', unsafe_allow_html=True)
 
