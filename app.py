@@ -41,8 +41,8 @@ def font():
 
 # 背景をレンダリング
 
-render()
 font()
+render()
 
 # アプリのタイトルを表示
 st.title('中二病ジェネレーター')
