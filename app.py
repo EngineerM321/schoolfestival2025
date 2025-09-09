@@ -37,7 +37,7 @@ def font():
     }
     """
     
-    return st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
+    return st.markdown(f'<style>.stApp{font_css}</style>', unsafe_allow_html=True)
 
 # 背景をレンダリング
 
