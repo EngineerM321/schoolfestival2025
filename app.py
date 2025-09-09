@@ -18,9 +18,6 @@ chat = model.start_chat()
 # 背景画像のURLをsecretsから取得
 back = st.secrets['secrets']['Background_Image']
 
-# アプリのタイトルを表示
-st.title('中二病ジェネレーター')
-
 # 背景画像を適用する関数
 def render():
     bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;}</style>'
@@ -52,6 +49,9 @@ def gemini(word):
 
 render()
 font()
+
+# アプリのタイトルを表示
+st.title('中二病ジェネレーター')
 
 # アプリの使い方を表示
 st.write("###### 1.入力欄に変換したい文を入力(20文字以内)  \n###### 2.変換ボタンをクリック  \n###### 3.中二病チックな文が生成されます")
