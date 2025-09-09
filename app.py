@@ -18,46 +18,40 @@ chat = model.start_chat()
 # 背景画像のURLをsecretsから取得
 back = st.secrets['secrets']['Background_Image']
 
+# アプリのタイトルを表示
+st.title('中二病ジェネレーター')
+
 # 背景画像を適用する関数
 def render():
-    bg_img = '<style>.stApp{background-image: url(' + back +');background-repeat: no-repeat;}</style>'
+    bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;}</style>'
     return st.markdown(bg_img, unsafe_allow_html=True)
 
 #フォントを指定する関数
 def font():
-    font_path = "./static/fonts/WDXLLubrifontJPN-Regular.woff2"
-    with open(font_path, "rb") as f:
-        font_data = f.read()
-        encoded = base64.b64encode(font_data).decode()
-
-    # CSSでフォントを読み込む
-    st.markdown(f"""
-        <style>
-        @font-face {{
-            font-family: 'WDXL Lubrifont JP N';
-            src: url(data:font/woff2;base64,{encoded}) format('truetype');
-        }}
+    font_css = """
+    @font-face {
+        font-family: 'WDXL Lubrifont JP N';
+        src: url('./static/fonts/WDXLLubrifontJPN-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body, .css-1v3fvcr {
+        font-family: 'WDXL Lubrifont JP N', sans-serif;
+    }
+    """
     
-        html, body, [class*="css"]  {{
-            font-family: 'WDXL Lubrifont JP N', sans-serif;
-        }}
-        </style>
-    """, unsafe_allow_html=True)
+    return st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
 
-
-# 背景をレンダリング
-
-font()
-render()
-
-# アプリのタイトルを表示
-st.title('中二病ジェネレーター')
 
 # 入力された文を中二病風の単語に変換する関数
 def gemini(word):
   response = chat.send_message('"{}"を中二病っぽくして言葉だけを１つ出力して'.format(word))
   return response.text
 
+# 背景をレンダリング
+
+render()
+font()
 
 # アプリの使い方を表示
 st.write("###### 1.入力欄に変換したい文を入力(20文字以内)  \n###### 2.変換ボタンをクリック  \n###### 3.中二病チックな文が生成されます")
