@@ -36,6 +36,7 @@ def font():
         font-family: 'WDXL Lubrifont JP N', sans-serif;
     }
     """
+    
     return st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
 
 # 背景をレンダリング
