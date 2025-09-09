@@ -31,7 +31,7 @@ def font():
     font_css = """
     @font-face {
         font-family: 'WDXL Lubrifont JP N';
-        src: url('./static/fonts/WDXLLubrifontJPN-Regular.woff2') format('woff2');
+        src: url('./static/fonts/WDXLLubrifontJPN-Regular.ttf') format('ttf');
         font-weight: normal;
         font-style: normal;
     }
