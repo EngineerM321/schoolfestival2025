@@ -21,7 +21,7 @@ back = st.secrets['secrets']['Background_Image']
 # 背景画像を適用する関数
 def render():
     bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;}</style>'
-    return st.markdown(bg_img, unsafe_allow_html=True)
+    st.markdown(bg_img, unsafe_allow_html=True)
 
 #フォントを指定する関数
 def font():
@@ -37,7 +37,7 @@ def font():
     }
     """
     
-    return st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
+    st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
 
 
 # 入力された文を中二病風の単語に変換する関数
