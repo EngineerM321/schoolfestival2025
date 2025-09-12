@@ -2,12 +2,11 @@
 import streamlit as st
 import time
 import google.generativeai as genai
-import base64
 
 # 入力文字数の最大値を設定
 maxword = 20
 
-# StreamlitのsecretsからAPIキーを取得
+# Gemini Apiの取得
 api = st.secrets['secrets']['API_KEY']
 
 # Gemini APIの初期化
@@ -15,30 +14,13 @@ genai.configure(api_key=api)
 model = genai.GenerativeModel(model_name='gemini-2.0-flash-lite')
 chat = model.start_chat()
 
-# 背景画像のURLをsecretsから取得
+# 背景画像のURLを取得
 back = st.secrets['secrets']['Background_Image']
 
 # 背景画像を適用する関数
 def render():
     bg_img = '<style>.stApp {background-image: url(' + back +');background-repeat: no-repeat;}</style>'
     st.markdown(bg_img, unsafe_allow_html=True)
-
-#フォントを指定する関数
-def font():
-    font_css = """
-    @font-face {
-        font-family: 'WDXL Lubrifont JP N';
-        src: url('./static/fonts/WDXLLubrifontJPN-Regular.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
-    body, .css-1v3fvcr {
-        font-family: 'WDXL Lubrifont JP N', sans-serif;
-    }
-    """
-    
-    st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
-    
 
 # 入力された文を中二病風の単語に変換する関数
 def gemini(word):
@@ -48,12 +30,8 @@ def gemini(word):
 # 背景をレンダリング
 
 render()
-font()
 
-# アプリのタイトルを表示
 st.title('中二病ジェネレーター')
-
-# アプリの使い方を表示
 st.write("###### 1.入力欄に変換したい文を入力(20文字以内)  \n###### 2.変換ボタンをクリック  \n###### 3.中二病チックな文が生成されます")
 
 # ユーザーからの入力を受け取るテキストボックス
