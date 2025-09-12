@@ -28,7 +28,6 @@ def gemini(word):
   return response.text
 
 # 背景をレンダリング
-
 render()
 
 st.title('中二病ジェネレーター')
