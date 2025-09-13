@@ -38,13 +38,16 @@ text_input = st.text_input('###### 文の入力', placeholder="例：このラ�
 
 # 「変換」ボタンがクリックされたときの処理
 if st.button('変換'):
-    # 入力文字数が上限を超えている場合は警告を表示
-    if len(text_input) > maxword:
-        overword = len(text_input) - maxword
-        st.warning(str(overword) + "文字オーバーしています")
-    else:
-        # Geminiに問い合わせて変換結果を表示
-        with st.spinner('変換中...'):
-            time.sleep(3)  # スピナー表示のための待機時間（ﾄｰｸﾝﾉｾﾂﾔｸﾉﾀﾒ）
-            result = gemini(text_input)
-            st.success("結果:" + result)
+    try:
+        # 入力文字数が上限を超えている場合は警告を表示
+        if len(text_input) > maxword:
+            overword = len(text_input) - maxword
+            st.warning(str(overword) + "文字オーバーしています")
+        else:
+            # Geminiに問い合わせて変換結果を表示
+            with st.spinner('変換中...'a):
+                time.sleep(3)  # スピナー表示のための待機時間（ﾄｰｸﾝﾉｾﾂﾔｸﾉﾀﾒ）
+                result = gemini(text_input)
+                st.success("結果:" + result)
+    except app as e:
+            st.warning("エラーが起きました\n"+e)
