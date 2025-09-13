@@ -44,7 +44,8 @@ if st.button('変換'):
         overword = len(text_input) - maxword
         st.warning(str(overword) + "文字オーバーしています")
     else:            # Geminiに問い合わせて変換結果を表示
-        with st.spinner('変換中...'a):
+        with st.spinner('変換中...'):
             time.sleep(3)  # スピナー表示のための待機時間（ﾄｰｸﾝﾉｾﾂﾔｸﾉﾀﾒ）
-            result = gemini(text_input)                st.success("結果:" + result)
+            result = gemini(text_input)                
+            st.success("結果:" + result)
 
